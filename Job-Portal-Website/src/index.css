@@ -11,6 +11,30 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee 30s linear infinite reverse;
+}
+
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 10s !important;
+  }
+
+  .animate-marquee2 {
+    animation-duration: 12s !important;
+  }
+}
+
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

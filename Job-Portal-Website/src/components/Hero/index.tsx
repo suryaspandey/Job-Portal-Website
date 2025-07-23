@@ -5,8 +5,13 @@ import Twitter from "@/assets/logos/twitter.svg";
 import LinkedIn from "@/assets/logos/linkedIn.svg";
 import Windows from "@/assets/logos/windows.svg";
 import JobBag from "@/assets/logos/job-seeker.png";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import { FaPlayCircle } from "react-icons/fa";
+import { Building, MapPin, Search } from "lucide-react";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+import { jobSearchKeywords } from "./constants";
+// import { Input } from "./ui/input";
 
 export const Hero = () => {
   return (
@@ -60,6 +65,68 @@ export const Hero = () => {
           Start your hunt for the best, life-changing career opportunities from
           here in your selected areas conveniently and get hired quickly.
         </p>
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="bg-white rounded-2xl shadow-2xl p-6 border border-border">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-muted-foreground">
+                  What
+                </label>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                  <Input
+                    placeholder="Job title or keyword"
+                    className="pl-10 h-12 border-border"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-muted-foreground">
+                  Where
+                </label>
+                <div className="relative">
+                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                  <Input
+                    placeholder="Location"
+                    className="pl-10 h-12 border-border"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-muted-foreground">
+                  Company
+                </label>
+                <div className="relative">
+                  <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                  <Input
+                    placeholder="Company"
+                    className="pl-10 h-12 border-border"
+                  />
+                </div>
+              </div>
+              <div className="flex items-end">
+                <Button
+                  size="lg"
+                  className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                >
+                  Search Job
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto pt-8">
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {jobSearchKeywords.map((job, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-white border border-border rounded-full text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              >
+                {job}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="flex sm:flex-row items-center justify-center gap-4 mb-12">
           <Button
             size="lg"
