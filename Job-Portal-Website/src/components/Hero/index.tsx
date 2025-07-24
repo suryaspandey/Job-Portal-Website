@@ -5,13 +5,11 @@ import Twitter from "@/assets/logos/twitter.svg";
 import LinkedIn from "@/assets/logos/linkedIn.svg";
 import Windows from "@/assets/logos/windows.svg";
 import JobBag from "@/assets/logos/job-seeker.png";
-// import { Button } from "./ui/button";
 import { FaPlayCircle } from "react-icons/fa";
 import { Building, MapPin, Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { jobSearchKeywords } from "./constants";
-// import { Input } from "./ui/input";
 
 export const Hero = () => {
   return (
