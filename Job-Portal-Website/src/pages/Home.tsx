@@ -1,5 +1,6 @@
 import FeaturedJobs from "@/components/FeaturedJobs";
 import Hero from "@/components/Hero";
+import HowItWorksSteps from "@/components/HowItWorksSteps";
 import JobRolesMarquee from "@/components/JobRolesMarquee";
 import Navbar from "@/components/Navbar";
 
@@ -10,6 +11,7 @@ export const Home = () => {
       <Hero />
       <JobRolesMarquee />
       <FeaturedJobs />
+      <HowItWorksSteps />
     </div>
   );
 };
