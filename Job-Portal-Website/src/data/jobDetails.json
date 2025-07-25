@@ -1,0 +1,225 @@
+{
+    "1": {
+        "title": "Senior React Developer",
+        "company": "Google",
+        "logo": "google.svg",
+        "location": "San Francisco, CA",
+        "type": "Full-time",
+        "salary": "$120k - $150k",
+        "mode": "Hybrid",
+        "experience": "5+ years",
+        "positions": "10",
+        "jobTabs": {
+            "description": "We are looking for a Senior React Developer to build high-performing web interfaces using TypeScript and React in a dynamic environment.",
+            "education": "Bachelor's or Master's degree in Computer Science or equivalent experience.",
+            "totalApplicants": 310
+        },
+        "skillsAndExperience": [
+            "Expertise in React, Redux, and TypeScript.",
+            "Experience with REST APIs and GraphQL.",
+            "Strong knowledge of modern JavaScript and testing libraries.",
+            "Node.js familiarity for backend integration.",
+            "Performance optimization and code splitting."
+        ],
+        "companyOverview": {
+            "description": "Google is an innovation-driven company aiming to organize the world’s information.",
+            "size": "150,000+ Employees",
+            "location": "San Francisco, CA"
+        },
+        "reviews": [
+            "✅ Great engineering culture",
+            "✅ Free meals and gym",
+            "❌ Large teams can slow decisions"
+        ],
+        "benefitsAndPerks": [
+            "Cafeteria",
+            "Stock Options",
+            "WiFi"
+        ]
+    },
+    "2": {
+        "title": "UX/UI Designer",
+        "company": "Figma",
+        "logo": "figma.svg",
+        "location": "New York, NY",
+        "type": "Full-time",
+        "salary": "$80k - $100k",
+        "mode": "Remote",
+        "experience": "3+ years",
+        "positions": "5",
+        "jobTabs": {
+            "description": "As a UX/UI Designer at Figma, you'll create intuitive and delightful design experiences across our platform.",
+            "education": "Degree in Design, HCI, or equivalent work experience.",
+            "totalApplicants": 184
+        },
+        "skillsAndExperience": [
+            "Strong design portfolio with UI/UX case studies.",
+            "Proficient in Figma and Adobe Creative Suite.",
+            "Knowledge of usability principles and responsive design.",
+            "Ability to create design systems and component libraries."
+        ],
+        "companyOverview": {
+            "description": "Figma is a web-based collaborative design tool helping teams design faster and together.",
+            "size": "2,000+ Employees",
+            "location": "New York, NY"
+        },
+        "reviews": [
+            "✅ Collaborative environment",
+            "✅ Innovative product culture",
+            "❌ Fast-changing priorities"
+        ],
+        "benefitsAndPerks": [
+            "Remote Work",
+            "Learning Budget",
+            "Flexible Hours"
+        ]
+    },
+    "3": {
+        "title": "Product Manager",
+        "company": "Amazon",
+        "logo": "amazon.svg",
+        "location": "Austin, TX",
+        "type": "Full-time",
+        "salary": "$100k - $130k",
+        "mode": "WFO",
+        "experience": "4+ years",
+        "positions": "3",
+        "jobTabs": {
+            "description": "Lead cross-functional teams to define and deliver impactful product solutions. Influence strategy and own execution.",
+            "education": "Bachelor’s in Business, CS, or related field. MBA preferred.",
+            "totalApplicants": 221
+        },
+        "skillsAndExperience": [
+            "Strong product strategy and roadmap planning.",
+            "Experience in Agile/Scrum environments.",
+            "Data-driven mindset with experience using analytics tools.",
+            "Strong stakeholder communication and leadership."
+        ],
+        "companyOverview": {
+            "description": "Amazon delivers innovation through its e-commerce, cloud, and logistics platforms.",
+            "size": "1M+ Employees",
+            "location": "Austin, TX"
+        },
+        "reviews": [
+            "✅ High-impact roles",
+            "✅ Fast-moving teams",
+            "❌ Work-life balance can be tough"
+        ],
+        "benefitsAndPerks": [
+            "Health Insurance",
+            "Relocation Support",
+            "Amazon Discounts"
+        ]
+    },
+    "4": {
+        "title": "DevOps Engineer",
+        "company": "Microsoft",
+        "logo": "windows.svg",
+        "location": "Seattle, WA",
+        "type": "Part-time",
+        "salary": "$110k - $140k",
+        "mode": "Hybrid",
+        "experience": "5+ years",
+        "positions": "12",
+        "jobTabs": {
+            "description": "Support CI/CD automation and infrastructure scaling for global apps at Microsoft. Join a team driving DevOps excellence.",
+            "education": "Bachelor's degree in Computer Science or related technical field.",
+            "totalApplicants": 265
+        },
+        "skillsAndExperience": [
+            "Experience with Azure DevOps, Jenkins, or GitHub Actions.",
+            "Infrastructure as Code with Terraform or Bicep.",
+            "Kubernetes cluster management and Helm charts.",
+            "Proficiency in scripting (Bash, PowerShell, or Python)."
+        ],
+        "companyOverview": {
+            "description": "Microsoft builds productivity tools and cloud infrastructure to empower the world.",
+            "size": "180,000+ Employees",
+            "location": "Seattle, WA"
+        },
+        "reviews": [
+            "✅ Professional development support",
+            "✅ Tech-focused culture",
+            "❌ Bureaucratic decision processes"
+        ],
+        "benefitsAndPerks": [
+            "Paid Certifications",
+            "On-site Gym",
+            "Flexible Work"
+        ]
+    },
+    "5": {
+        "title": "Data Scientist",
+        "company": "LinkedIn",
+        "logo": "linkedIn.svg",
+        "location": "Boston, MA",
+        "type": "Full-time",
+        "salary": "$95k - $125k",
+        "mode": "Remote",
+        "experience": "3+ years",
+        "positions": "4",
+        "jobTabs": {
+            "description": "Work with business, engineering, and product teams to analyze data and build predictive models for member growth.",
+            "education": "Master’s or Ph.D. in Data Science, Stats, or CS preferred.",
+            "totalApplicants": 176
+        },
+        "skillsAndExperience": [
+            "Expertise in Python, Pandas, and Scikit-learn.",
+            "Experience with SQL and data visualization tools.",
+            "Understanding of A/B testing and statistical inference.",
+            "Familiarity with Spark or big data pipelines is a plus."
+        ],
+        "companyOverview": {
+            "description": "LinkedIn connects professionals globally and offers career development insights.",
+            "size": "20,000+ Employees",
+            "location": "Boston, MA"
+        },
+        "reviews": [
+            "✅ Positive team environment",
+            "✅ Strong mentorship programs",
+            "❌ Slow feature deployment cycles"
+        ],
+        "benefitsAndPerks": [
+            "LinkedIn Premium",
+            "Conference Travel",
+            "Stock Grants"
+        ]
+    },
+    "6": {
+        "title": "Marketing Manager",
+        "company": "Twitter",
+        "logo": "twitter.svg",
+        "location": "Los Angeles, CA",
+        "type": "Part-time",
+        "salary": "$75k - $95k",
+        "mode": "WFO",
+        "experience": "4+ years",
+        "positions": "5",
+        "jobTabs": {
+            "description": "Develop and execute growth-focused digital marketing strategies to scale Twitter’s engagement and outreach.",
+            "education": "Bachelor's in Marketing, Communications, or relevant field.",
+            "totalApplicants": 153
+        },
+        "skillsAndExperience": [
+            "SEO/SEM and paid media strategy experience.",
+            "Analytics tools like GA4, HubSpot, or Mixpanel.",
+            "Email marketing and funnel optimization.",
+            "Creative content planning and social media management."
+        ],
+        "companyOverview": {
+            "description": "Twitter is a microblogging platform where ideas trend and global news breaks.",
+            "size": "10,000+ Employees",
+            "location": "Los Angeles, CA"
+        },
+        "reviews": [
+            "✅ Fun and open culture",
+            "✅ Great tools for marketing",
+            "❌ Constant algorithm changes"
+        ],
+        "benefitsAndPerks": [
+            "Lunch Stipend",
+            "Wellness Days",
+            "Marketing Conferences"
+        ]
+    }
+}

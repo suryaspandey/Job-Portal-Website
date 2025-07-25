@@ -1,21 +1,26 @@
 import FeaturedJobCard from "../FeaturedJobCard";
-import { featuredJobs } from "./constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import useMobile from "@/hooks/useMobile";
+import featuredJobs from "../../data/jobList.json";
 export const FeaturedJobs = () => {
   const isMobile = useMobile();
+
   return (
-    <section id="featuredJobs" className="py-20 bg-gray-100">
+    <section id="featuredJobs" className="py-20 bg-gray-100 dark:bg-white">
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className=" mb-16  items-center">
           <div className="flex justify-between items-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-              Featured <span className="text-primary">Jobs</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground dark:text-background">
+                Featured
+              </span>
+              <span className="text-primary"> Jobs</span>
             </h2>
+
             <div className="flex justify-end text-primary cursor-pointer mb-4">
               View All Jobs
             </div>

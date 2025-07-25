@@ -4,7 +4,9 @@ export const WorkingStepCard = ({ step, index }: any) => {
   const Icon = step.icon;
   return (
     <div key={index}>
-      <Card className={`px-6 !gap-1 ${index % 2 === 0 ? "mt-0" : "mt-4"}`}>
+      <Card
+        className={`bg-white px-6 !gap-1 ${index % 2 === 0 ? "mt-0" : "mt-4"}`}
+      >
         <div className="flex flex-col mb-1">
           <Icon
             className={"w-8 h-8 mr-4 mb-2"}

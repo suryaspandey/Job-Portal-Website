@@ -64,7 +64,7 @@ export const Hero = () => {
           here in your selected areas conveniently and get hired quickly.
         </p>
         <div className="max-w-4xl mx-auto mb-8">
-          <div className="bg-white rounded-2xl shadow-2xl p-6 border border-border">
+          <div className="bg-white rounded-2xl shadow-2xl shadow-gray-900 p-6 border border-border">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted-foreground">
@@ -74,7 +74,7 @@ export const Hero = () => {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
                     placeholder="Job title or keyword"
-                    className="pl-10 h-12 border-border"
+                    className="pl-10 h-12 border-border dark:bg-white"
                   />
                 </div>
               </div>
@@ -86,7 +86,7 @@ export const Hero = () => {
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
                     placeholder="Location"
-                    className="pl-10 h-12 border-border"
+                    className="pl-10 h-12 border-border dark:bg-white"
                   />
                 </div>
               </div>
@@ -98,7 +98,7 @@ export const Hero = () => {
                   <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
                     placeholder="Company"
-                    className="pl-10 h-12 border-border"
+                    className="pl-10 h-12 border-border dark:bg-white"
                   />
                 </div>
               </div>
@@ -141,7 +141,7 @@ export const Hero = () => {
               className="cursor-pointer"
               style={{ width: "30px", height: "30px" }}
             />
-            <span className="text-black">How it Works?</span>
+            <span className="text-foreground !bg-transparent">How it Works?</span>
           </Button>
         </div>
       </div>

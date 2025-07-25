@@ -35,13 +35,18 @@ export const Footer = () => {
                   return (
                     <li key={idx}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         <div className="flex items-center gap-1">
                           {link.icon && (
                             <span>
-                              <Icon className="w-4 h-4 mt-1" />
+                              <Icon
+                                className="w-4 h-4 mt-1 text-black dark:text-foreground"
+                                stroke="currentColor"
+                                strokeWidth={3}
+                                fill="none"
+                              />
                             </span>
                           )}
                           <span> {link.label}</span>
@@ -72,7 +77,12 @@ export const Footer = () => {
                               <div className="flex items-center gap-1">
                                 {link.icon && (
                                   <span>
-                                    <Icon className="w-4 h-4 mt-1" />
+                                    <Icon
+                                      className="w-4 h-4 mt-1 text-black dark:text-foreground"
+                                      stroke="currentColor"
+                                      strokeWidth={3}
+                                      fill="none"
+                                    />
                                   </span>
                                 )}
                                 <span> {link.label}</span>

@@ -3,12 +3,15 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { menuLinks } from "./MobileMenu/constants";
+import ToggleTheme from "./ToggleTheme";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="w-full bg-background border-b border-border fixed top-0 z-50">
+      <ToggleTheme />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -31,13 +34,13 @@ export const Navbar = () => {
             </nav>
             <Button
               variant="outline"
-              className="text-black hover:!text-primary hover:!bg-none"
+              className="text-foreground hover:!text-primary hover:!bg-white"
             >
               Login
             </Button>
             <Button
               variant="outline"
-              className="text-black hover:!text-primary hover:!bg-none"
+              className="text-foreground hover:!text-primary hover:!bg-white"
             >
               Sign Up
             </Button>
