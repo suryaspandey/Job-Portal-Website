@@ -11,9 +11,44 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { jobSearchKeywords } from "./constants";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import jobList from "../../data/jobList.json";
+import SearchResults from "../SearchResults";
 
 export const Hero = () => {
   const navigate = useNavigate();
+
+  const [result, setResult] = useState([]);
+  const [jobTitle, setJobTitle] = useState([]);
+  const [jobLocation, setJobLocation] = useState([]);
+  const [companyName, setCompanyName] = useState([]);
+
+  const handleSearch = () => {
+    let filteredResults = [...jobList];
+
+    if (jobTitle.length) {
+      filteredResults = filteredResults.filter((job) =>
+        job.title.toLowerCase().includes(jobTitle.toLowerCase())
+      );
+    }
+
+    if (jobLocation.length) {
+      filteredResults = filteredResults.filter((job) =>
+        job.location.toLowerCase().includes(jobLocation.toLowerCase())
+      );
+    }
+
+    if (companyName.length) {
+      filteredResults = filteredResults.filter((job) =>
+        job.company.toLowerCase().includes(companyName.toLowerCase())
+      );
+    }
+
+    setResult(filteredResults);
+  };
+
+  console.log(result);
   return (
     <section className=" min-h-[55vh] md:min-h-[80vh] flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
       <div className="relative w-full h-full">
@@ -76,7 +111,8 @@ export const Hero = () => {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
                     placeholder="Job title or keyword"
-                    className="pl-10 h-12 border-border dark:bg-white"
+                    className="pl-10 h-12 border-border dark:bg-white dark:text-black"
+                    onChange={(e) => setJobTitle(e.target.value)}
                   />
                 </div>
               </div>
@@ -88,7 +124,8 @@ export const Hero = () => {
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
                     placeholder="Location"
-                    className="pl-10 h-12 border-border dark:bg-white"
+                    className="pl-10 h-12 border-border dark:bg-white dark:text-black"
+                    onChange={(e) => setJobLocation(e.target.value)}
                   />
                 </div>
               </div>
@@ -100,7 +137,8 @@ export const Hero = () => {
                   <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
                     placeholder="Company"
-                    className="pl-10 h-12 border-border dark:bg-white"
+                    className="pl-10 h-12 border-border dark:bg-white dark:text-black"
+                    onChange={(e) => setCompanyName(e.target.value)}
                   />
                 </div>
               </div>
@@ -108,6 +146,7 @@ export const Hero = () => {
                 <Button
                   size="lg"
                   className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                  onClick={handleSearch}
                 >
                   Search Job
                 </Button>
@@ -115,41 +154,51 @@ export const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto pt-8">
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {jobSearchKeywords.map((job, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-white border border-border rounded-full text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
-              >
-                {job}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="flex sm:flex-row items-center justify-center gap-4 mb-12">
-          <Button
-            size="lg"
-            onClick={() => navigate("/jobs")}
-            className="bg-primary rounded-xl hover:bg-primary/90 text-primary-foreground px-8 py-5 text-lg font-medium shadow-elegant"
-          >
-            Browse Jobs
-          </Button>
-          <a href="#howItWorks">
-            <Button
-              variant="ghost"
-              size="lg"
-              className=" cursor-pointer text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg font-medium flex items-center gap-2 "
-            >
-              <FaPlayCircle
-                className="cursor-pointer"
-                style={{ width: "30px", height: "30px" }}
-              />
-              <span className="text-foreground !bg-transparent">
-                How it Works?
-              </span>
-            </Button>
-          </a>
+        <div className="w-[350px] md:w-[500px]">
+          {result?.length ? (
+            <div className=" w-full pt-8">
+              <SearchResults results={result} />
+            </div>
+          ) : (
+            <>
+              <div className="max-w-4xl mx-auto pt-8">
+                <div className="flex flex-wrap justify-center gap-3 mb-8">
+                  {jobSearchKeywords.map((job, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-white border border-border rounded-full text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+                    >
+                      {job}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex sm:flex-row items-center justify-center gap-4 mb-12">
+                <Button
+                  size="lg"
+                  onClick={() => navigate("/jobs")}
+                  className="bg-primary rounded-xl hover:bg-primary/90 text-primary-foreground px-8 py-5 text-lg font-medium shadow-elegant"
+                >
+                  Browse Jobs
+                </Button>
+                <a href="#howItWorks">
+                  <Button
+                    variant="ghost"
+                    size="lg"
+                    className=" cursor-pointer text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg font-medium flex items-center gap-2 "
+                  >
+                    <FaPlayCircle
+                      className="cursor-pointer"
+                      style={{ width: "30px", height: "30px" }}
+                    />
+                    <span className="text-foreground !bg-transparent">
+                      How it Works?
+                    </span>
+                  </Button>
+                </a>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
