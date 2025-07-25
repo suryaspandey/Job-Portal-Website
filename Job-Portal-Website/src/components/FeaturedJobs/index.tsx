@@ -9,7 +9,7 @@ import useMobile from "@/hooks/useMobile";
 export const FeaturedJobs = () => {
   const isMobile = useMobile();
   return (
-    <section className="py-20 bg-gray-100">
+    <section id="featuredJobs" className="py-20 bg-gray-100">
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className=" mb-16  items-center">
           <div className="flex justify-between items-center">
