@@ -1,7 +1,7 @@
 export const menuLinks = [
   {
     title: "Find Jobs",
-    href: "#featuredJobs",
+    href: "/jobs",
   },
   {
     title: "For Companies",
@@ -9,6 +9,6 @@ export const menuLinks = [
   },
   {
     title: "Contact Us",
-    href: "#footer",
+    href: "/#footer",
   },
 ];

@@ -3,11 +3,11 @@ import JobListCard from "@/components/JobListCard";
 import { useState } from "react";
 import JobFilter from "@/components/JobFilter";
 
-export const JobList = () => {
+const JobList = () => {
   const [currentJobList, setCurrentJobList] = useState(jobList);
 
   return (
-    <div className="min-h-screen bg-purple-50 dark:bg-black">
+    <div className="min-h-screen bg-purple-50 dark:bg-black pt-[72px]">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-8">
           <JobFilter jobList={jobList} setCurrentJobList={setCurrentJobList} />

@@ -4,7 +4,7 @@ export const footerLinks = [
   {
     title: "Quick Links",
     links: [
-      { label: "Find Jobs", href: "#featuredJobs" },
+      { label: "Find Jobs", href: "/jobs" },
       { label: "For Companies", href: "#" },
       { label: "Contact Us", href: "#footer" },
     ],

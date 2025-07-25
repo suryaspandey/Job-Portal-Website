@@ -6,7 +6,7 @@ import JobRolesMarquee from "@/components/JobRolesMarquee";
 import JobUpdates from "@/components/JobUpdates";
 import TopCompanies from "@/components/TopCompanies";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="min-h-screen bg-background pt-[72px]">
       <Hero />
@@ -19,3 +19,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

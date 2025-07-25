@@ -10,8 +10,10 @@ import { Building, MapPin, Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { jobSearchKeywords } from "./constants";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className=" min-h-[55vh] md:min-h-[80vh] flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
       <div className="relative w-full h-full">
@@ -128,21 +130,26 @@ export const Hero = () => {
         <div className="flex sm:flex-row items-center justify-center gap-4 mb-12">
           <Button
             size="lg"
+            onClick={() => navigate("/jobs")}
             className="bg-primary rounded-xl hover:bg-primary/90 text-primary-foreground px-8 py-5 text-lg font-medium shadow-elegant"
           >
             Browse Jobs
           </Button>
-          <Button
-            variant="ghost"
-            size="lg"
-            className=" cursor-pointer text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg font-medium flex items-center gap-2 "
-          >
-            <FaPlayCircle
-              className="cursor-pointer"
-              style={{ width: "30px", height: "30px" }}
-            />
-            <span className="text-foreground !bg-transparent">How it Works?</span>
-          </Button>
+          <a href="#howItWorks">
+            <Button
+              variant="ghost"
+              size="lg"
+              className=" cursor-pointer text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg font-medium flex items-center gap-2 "
+            >
+              <FaPlayCircle
+                className="cursor-pointer"
+                style={{ width: "30px", height: "30px" }}
+              />
+              <span className="text-foreground !bg-transparent">
+                How it Works?
+              </span>
+            </Button>
+          </a>
         </div>
       </div>
     </section>

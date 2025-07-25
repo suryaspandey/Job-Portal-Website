@@ -6,8 +6,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import useMobile from "@/hooks/useMobile";
 import featuredJobs from "../../data/jobList.json";
+import { useNavigate } from "react-router-dom";
 export const FeaturedJobs = () => {
   const isMobile = useMobile();
+  const navigate = useNavigate();
 
   return (
     <section id="featuredJobs" className="py-20 bg-gray-100 dark:bg-white">
@@ -21,7 +23,10 @@ export const FeaturedJobs = () => {
               <span className="text-primary"> Jobs</span>
             </h2>
 
-            <div className="flex justify-end text-primary cursor-pointer mb-4">
+            <div
+              className="flex justify-end text-primary cursor-pointer mb-4"
+              onClick={() => navigate("/jobs")}
+            >
               View All Jobs
             </div>
           </div>
