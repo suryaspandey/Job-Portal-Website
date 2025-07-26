@@ -3,12 +3,14 @@ import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { companyLogos } from "../FeaturedJobs/constants";
 import { Badge } from "../ui/badge";
+import { useNavigate } from "react-router-dom";
 
 export const JobListCard = ({ job }) => {
+  const navigate = useNavigate();
   return (
     <Card
       key={job.id}
-      className="group hover:shadow-elegant transition-all duration-300  hover:-translate-y-1 bg-white border-border/50"
+      className="mb-2 md:mb-0 group hover:shadow-elegant transition-all duration-300  hover:-translate-y-1 bg-white border-border/50"
     >
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between">
@@ -79,7 +81,7 @@ export const JobListCard = ({ job }) => {
             <div className="flex gap-1">
               <Badge
                 variant="secondary"
-                className="bg-green-100 text-green-700 hover:bg-green-200"
+                className="bg-[#CCFBF1] text-[#22D3EE] hover:bg-[#CCFBF1]"
               >
                 {`$${job.salary}/Year`}
               </Badge>
@@ -103,6 +105,7 @@ export const JobListCard = ({ job }) => {
           <Button
             variant="outline"
             className="border-black rounded-xl text-[12px] dark:bg-transparent dark:text-black"
+            onClick={() => navigate(`/jobs/${job.id}`)}
           >
             View Details
           </Button>

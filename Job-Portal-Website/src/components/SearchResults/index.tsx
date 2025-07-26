@@ -1,8 +1,10 @@
 import { Building2, Eye, MapPin } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 const SearchResults = ({ results }: any) => {
+  const navigate = useNavigate();
   return (
     <section className="py-1 bg-gray-50  min-w-full rounded-lg ">
       <div className=" px-4 sm:px-6 lg:px-8">
@@ -15,7 +17,10 @@ const SearchResults = ({ results }: any) => {
 
         <div className="space-y-4 h-[200px] overflow-y-auto pr-2">
           {results.map((job) => (
-            <Card key={job.id} className="!py-2 hover:shadow-md transition-shadow dark:bg-gray-100">
+            <Card
+              key={job.id}
+              className="!py-2 hover:shadow-md transition-shadow dark:bg-gray-100"
+            >
               <CardContent className="p-1">
                 <div className="flex items-center justify-between">
                   <div className=" space-y-1">
@@ -39,6 +44,7 @@ const SearchResults = ({ results }: any) => {
                     variant="outline"
                     size="sm"
                     className="flex items-center gap-2"
+                    onClick={() => navigate(`/jobs/${job.id}`)}
                   >
                     <Eye className="w-4 h-4" />
                     View

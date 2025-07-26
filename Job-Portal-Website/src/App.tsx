@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 
 const Home = loadable(() => import("./pages/Home"));
 const JobList = loadable(() => import("./pages/JobList"));
+const JobDetails = loadable(() => import("./pages/JobDetails"));
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/jobs" element={<JobList />} />
+          <Route path="/jobs/:id" element={<JobDetails />} />
 
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
