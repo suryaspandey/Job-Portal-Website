@@ -10,9 +10,9 @@ export const JobListCard = ({ job }) => {
   return (
     <Card
       key={job.id}
-      className="mb-2 md:mb-0 group hover:shadow-elegant transition-all duration-300  hover:-translate-y-1 bg-white border-border/50"
+      className="mb-2 md:mb-0 md:!gap-3 group hover:shadow-elegant transition-all duration-300  hover:-translate-y-1 bg-white border-border/50"
     >
-      <CardHeader className="pb-4">
+      <CardHeader className="pb-2">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-white p-2 border">
@@ -42,7 +42,7 @@ export const JobListCard = ({ job }) => {
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-2">
         <div className="flex items-center gap-2 font-semibold text-lg text-black leading-tight">
           {job.title}
         </div>

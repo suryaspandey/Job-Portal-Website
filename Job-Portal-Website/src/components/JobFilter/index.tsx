@@ -1,17 +1,37 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
-import { experienceRangeMap, filterOptions, salaryRangeMap } from "./constants";
+import {
+  datePostedMap,
+  experienceRangeMap,
+  filterOptions,
+  jobTypeMap,
+  salaryRangeMap,
+} from "./constants";
 import FilterSection from "../FilterSection";
 import { Accordion } from "../ui/accordion";
+import { FunnelX } from "lucide-react";
 
-export const JobFilter = ({ jobList, setCurrentJobList }) => {
+interface JobFilterProps {
+  jobList: any[];
+  setCurrentJobList: any;
+  isMobile?: boolean;
+  setOpenFilterMenu?: any;
+}
+export const JobFilter = ({
+  jobList,
+  setCurrentJobList,
+  isMobile = false,
+  setOpenFilterMenu,
+}: JobFilterProps) => {
   const [filters, setFilters] = useState({
     companyType: [],
     location: [],
     experience: [],
     industry: [],
     salary: [],
+    datePosted: [],
+    jobType: [],
   });
 
   useEffect(() => {
@@ -44,11 +64,32 @@ export const JobFilter = ({ jobList, setCurrentJobList }) => {
       });
     }
 
+    if (filters.jobType.length > 0) {
+      filtered = filtered.filter((job) => {
+        return filters.jobType.some((jobT) => {
+          const currentJobType = jobTypeMap[jobT];
+          return job.officeType === currentJobType;
+        });
+      });
+    }
+
     if (filters.salary.length > 0) {
       filtered = filtered.filter((job) => {
         return filters.salary.some((sal) => {
           const [min, max] = salaryRangeMap[sal];
           return job.salary >= min && job.salary <= max;
+        });
+      });
+    }
+
+    if (filters.datePosted.length > 0) {
+      filtered = filtered.filter((job) => {
+        const jobDate = new Date(job.datePosted);
+        return filters.datePosted.some((key) => {
+          const range = datePostedMap[key];
+          if (!range) return false;
+          const [min, max] = range;
+          return jobDate >= min && jobDate <= max;
         });
       });
     }
@@ -98,13 +139,41 @@ export const JobFilter = ({ jobList, setCurrentJobList }) => {
       filterKey: "experience",
       selectedFilters: filters.experience,
     },
+
+    {
+      title: "Date Posted",
+      items: filterOptions.datePostedType,
+      filterKey: "datePosted",
+      selectedFilters: filters.datePosted,
+    },
+    {
+      title: "Job Type",
+      items: filterOptions.jobType,
+      filterKey: "jobType",
+      selectedFilters: filters.jobType,
+    },
   ];
 
   return (
-    <div className="w-64 flex-shrink-0">
-      <Card className="p-6">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="font-semibold text-lg">Filter Jobs</h3>
+    <div className="w-64 flex-shrink-0 ">
+      <Card className="p-6 h-[700px] md:h-[1130px]">
+        <div className="flex items-center justify-between mb-6 ">
+          <div>
+            <h3 className="font-semibold text-lg">Filter Jobs</h3>
+            {isMobile && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  if (isMobile && setOpenFilterMenu) {
+                    setOpenFilterMenu(false);
+                  }
+                }}
+              >
+                Apply Filter
+              </Button>
+            )}
+          </div>
           <Button
             variant="outline"
             size="sm"
@@ -115,17 +184,19 @@ export const JobFilter = ({ jobList, setCurrentJobList }) => {
                 experience: [],
                 industry: [],
                 salary: [],
+                jobType: [],
+                datePosted: [],
               });
               setCurrentJobList(jobList);
             }}
           >
-            Clear All
+            {isMobile ? <FunnelX className="h-10 w-10 " /> : "Clear All"}
           </Button>
         </div>
 
         <Accordion
           type="multiple"
-          className="w-full"
+          className="w-full overflow-y-scroll"
           defaultValue={filterConfig.map((section) => section.title)}
         >
           {filterConfig.map(({ title, items, filterKey, selectedFilters }) => (
