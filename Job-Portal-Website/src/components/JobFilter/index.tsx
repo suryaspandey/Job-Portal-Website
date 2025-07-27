@@ -206,7 +206,15 @@ export const JobFilter = ({
                   setCurrentJobList(jobList);
                 }}
               >
-                {isMobile ? <FunnelX className="h-10 w-10 " /> : "Clear All"}
+                {isMobile ? (
+                  <FunnelX
+                    role="button"
+                    className="h-10 w-10"
+                    aria-label="Clear all filter"
+                  />
+                ) : (
+                  "Clear All"
+                )}
               </Button>
             </div>
             <hr />

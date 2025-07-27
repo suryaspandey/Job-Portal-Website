@@ -13,11 +13,16 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => {
   return (
     <div className="fixed inset-0 bg-background z-50 p-6 flex flex-col gap-6">
       <div className="flex justify-between items-center">
-        <div className="w-20" onClick={() => navigate("/")}>
+        <div
+          className="w-20"
+          onClick={() => navigate("/")}
+          role="button"
+          aria-label="Go to Home"
+        >
           <img src={Logo} alt="Job Hunt" />
         </div>
         <Button variant="ghost" size="icon" onClick={onClose}>
-          <X className="h-5 w-5" />
+          <X role="button" aria-label="Close Menu" className="h-5 w-5" />
         </Button>
       </div>
 
@@ -28,6 +33,7 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => {
             href={item.href}
             className="text-muted-foreground hover:text-primary transition-colors"
             onClick={onClose}
+            aria-label={item.title}
           >
             {item.title}
           </a>

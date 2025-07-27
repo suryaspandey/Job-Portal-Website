@@ -62,6 +62,8 @@ const JobList = () => {
 
               <div className="block md:hidden">
                 <Filter
+                  role="button"
+                  aria-label="Open filter panel"
                   onClick={() => setOpenFilterMenu(true)}
                   className="cursor-pointer"
                 />
@@ -75,7 +77,7 @@ const JobList = () => {
                     onClick={() => setOpenFilterMenu(false)}
                     className="absolute top-4 right-4"
                   >
-                    <X />
+                    <X role="button" aria-label="Close filter section" />
                   </Button>
                   <JobFilter
                     jobList={jobList}
@@ -87,7 +89,7 @@ const JobList = () => {
               </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">             
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
               {isLoading ? (
                 Array.from({ length: pageSize }).map((_, index) => (
                   <FindJobCardSkeleton key={index} />

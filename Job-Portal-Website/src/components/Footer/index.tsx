@@ -16,7 +16,7 @@ export const Footer = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1 space-y-4">
-            <div className="w-20">
+            <div className="w-20" role="button" aria-label="Go to Home">
               <img src={Logo} alt="Job Hunt" />
             </div>
             <p className="text-muted-foreground text-sm mb-4 max-w-md">

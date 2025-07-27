@@ -18,7 +18,12 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="w-20 cursor-pointer" onClick={() => navigate("/")}>
+            <div
+              className="w-20 cursor-pointer"
+              onClick={() => navigate("/")}
+              role="button"
+              aria-label="Go to Home"
+            >
               <img src={Logo} alt="Job Hunt" />
             </div>
           </div>
@@ -30,6 +35,7 @@ export const Navbar = () => {
                   key={item.title}
                   href={item.href}
                   className="text-foreground hover:text-primary transition-colors"
+                  aria-label={item.title}
                 >
                   {item.title}
                 </a>

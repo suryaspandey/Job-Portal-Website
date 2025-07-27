@@ -7,6 +7,10 @@ export const ToggleTheme = () => {
     <button
       className="absolute  z-40 top-4 right-16 md:right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors"
       onClick={toggleTheme}
+      role="button"
+      aria-label={
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      }
     >
       {theme === "dark" ? <Moon /> : <Sun />}
     </button>
