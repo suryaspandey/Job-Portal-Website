@@ -5,8 +5,5 @@ export const jobSearchKeywords = [
   "Graphic Designer",
   "Senior Accountant",
   "UI Designer",
-  "Employer Branding Associate",
-  "Lead DevOps Engineer",
-  "Employer Branding Associate",
   "Tester",
 ];

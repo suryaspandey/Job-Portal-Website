@@ -11,6 +11,7 @@ import {
 import FilterSection from "../FilterSection";
 import { Accordion } from "../ui/accordion";
 import { FunnelX } from "lucide-react";
+import FilterSidebarSkeleton from "../PageSkeletons/FilterSidebarSkeleton";
 
 interface JobFilterProps {
   jobList: any[];
@@ -24,6 +25,16 @@ export const JobFilter = ({
   isMobile = false,
   setOpenFilterMenu,
 }: JobFilterProps) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const [filters, setFilters] = useState({
     companyType: [],
     location: [],
@@ -155,63 +166,72 @@ export const JobFilter = ({
   ];
 
   return (
-    <div className="w-64 flex-shrink-0 ">
-      <Card className="p-6 h-[700px] md:h-[1130px]">
-        <div className="flex items-center justify-between mb-6 ">
-          <div>
-            <h3 className="font-semibold text-lg">Filter Jobs</h3>
-            {isMobile && (
+    <>
+      {isLoading ? (
+        <FilterSidebarSkeleton />
+      ) : (
+        <div className="w-64 flex-shrink-0 ">
+          <Card className="p-6 h-[800px] md:h-[1130px]">
+    
+            <div className="flex items-center justify-between mb-6 ">
+              <div>
+                <h3 className="font-semibold text-lg">Filter Jobs</h3>
+                {isMobile && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => {
+                      if (isMobile && setOpenFilterMenu) {
+                        setOpenFilterMenu(false);
+                      }
+                    }}
+                  >
+                    Apply Filter
+                  </Button>
+                )}
+              </div>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => {
-                  if (isMobile && setOpenFilterMenu) {
-                    setOpenFilterMenu(false);
-                  }
+                  setFilters({
+                    companyType: [],
+                    location: [],
+                    experience: [],
+                    industry: [],
+                    salary: [],
+                    jobType: [],
+                    datePosted: [],
+                  });
+                  setCurrentJobList(jobList);
                 }}
               >
-                Apply Filter
+                {isMobile ? <FunnelX className="h-10 w-10 " /> : "Clear All"}
               </Button>
-            )}
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => {
-              setFilters({
-                companyType: [],
-                location: [],
-                experience: [],
-                industry: [],
-                salary: [],
-                jobType: [],
-                datePosted: [],
-              });
-              setCurrentJobList(jobList);
-            }}
-          >
-            {isMobile ? <FunnelX className="h-10 w-10 " /> : "Clear All"}
-          </Button>
-        </div>
+            </div>
 
-        <Accordion
-          type="multiple"
-          className="w-full overflow-y-scroll"
-          defaultValue={filterConfig.map((section) => section.title)}
-        >
-          {filterConfig.map(({ title, items, filterKey, selectedFilters }) => (
-            <FilterSection
-              key={filterKey}
-              title={title}
-              items={items}
-              filterKey={filterKey}
-              selectedFilters={selectedFilters}
-              updateFilter={updateFilter}
-            />
-          ))}
-        </Accordion>
-      </Card>
-    </div>
+            <Accordion
+              type="multiple"
+              className="w-full overflow-y-scroll"
+              defaultValue={filterConfig.map((section) => section.title)}
+            >
+              {filterConfig.map(
+                ({ title, items, filterKey, selectedFilters }) => (
+                  <FilterSection
+                    key={filterKey}
+                    title={title}
+                    items={items}
+                    filterKey={filterKey}
+                    selectedFilters={selectedFilters}
+                    updateFilter={updateFilter}
+                  />
+                )
+              )}
+            </Accordion>
+          </Card>
+        </div>
+      )}
+    </>
   );
 };
 

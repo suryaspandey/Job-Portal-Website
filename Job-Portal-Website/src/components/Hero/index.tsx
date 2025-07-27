@@ -48,7 +48,6 @@ export const Hero = () => {
     setResult(filteredResults);
   };
 
-  console.log(result);
   return (
     <section className=" min-h-[55vh] md:min-h-[80vh] flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
       <div className="relative w-full h-full">
