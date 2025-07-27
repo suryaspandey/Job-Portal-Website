@@ -6,7 +6,9 @@ import LinkedIn from "@/assets/logos/linkedIn.svg";
 import Windows from "@/assets/logos/windows.svg";
 import JobBag from "@/assets/logos/job-seeker.png";
 import { FaPlayCircle } from "react-icons/fa";
-import { Building, MapPin, Search } from "lucide-react";
+import { Building, MapPin, Search, X } from "lucide-react";
+import { XCircle } from "lucide-react";
+
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { jobSearchKeywords } from "./constants";
@@ -22,11 +24,13 @@ export const Hero = () => {
   const isMobile = useMobile();
 
   const [result, setResult] = useState([]);
-  const [jobTitle, setJobTitle] = useState([]);
-  const [jobLocation, setJobLocation] = useState([]);
-  const [companyName, setCompanyName] = useState([]);
+  const [jobTitle, setJobTitle] = useState("");
+  const [jobLocation, setJobLocation] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = () => {
+    setHasSearched(true);
     let filteredResults = [...jobList];
 
     if (jobTitle.length) {
@@ -115,6 +119,7 @@ export const Hero = () => {
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
+                    value={jobTitle}
                     placeholder="Job title or keyword"
                     className="pl-10 h-12 border-border dark:bg-white dark:text-black"
                     onChange={(e) => setJobTitle(e.target.value)}
@@ -128,6 +133,7 @@ export const Hero = () => {
                 <div className="relative">
                   <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
+                    value={jobLocation}
                     placeholder="Location"
                     className="pl-10 h-12 border-border dark:bg-white dark:text-black"
                     onChange={(e) => setJobLocation(e.target.value)}
@@ -141,13 +147,14 @@ export const Hero = () => {
                 <div className="relative">
                   <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                   <Input
+                    value={companyName}
                     placeholder="Company"
                     className="pl-10 h-12 border-border dark:bg-white dark:text-black"
                     onChange={(e) => setCompanyName(e.target.value)}
                   />
                 </div>
               </div>
-              <div className="flex items-end">
+              <div className="relative flex justify-between gap-2 items-end">
                 <Button
                   size="lg"
                   className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
@@ -155,15 +162,34 @@ export const Hero = () => {
                 >
                   Search Job
                 </Button>
+                {hasSearched ? (
+                  <XCircle
+                    className="absolute -top-3 -right-3 w-5 h-5 cursor-pointer text-black hover:text-red-600"
+                    onClick={() => {
+                      setResult([]);
+                      setHasSearched(false);
+                      setJobTitle("");
+                      setJobLocation("");
+                      setCompanyName("");
+                    }}
+                    aria-label="Clear search"
+                  />
+                ) : null}
               </div>
             </div>
           </div>
         </div>
-        <div className="w-[350px] md:w-[500px]">
-          {result?.length ? (
-            <div className=" w-full pt-8">
-              <SearchResults results={result} />
-            </div>
+        <div className="w-[350px] md:w-[800px]">
+          {hasSearched ? (
+            result?.length ? (
+              <div className="w-full pt-8">
+                <SearchResults results={result} />
+              </div>
+            ) : (
+              <div className="text-center text-muted-foreground pt-10 pb-20 text-lg">
+                No matching jobs found. Please try different keywords.
+              </div>
+            )
           ) : (
             <>
               <div className="max-w-4xl mx-auto pt-8">

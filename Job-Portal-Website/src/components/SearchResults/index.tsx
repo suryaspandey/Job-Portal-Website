@@ -3,6 +3,7 @@ import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { companyLogos } from "../FeaturedJobs/constants";
 
 interface SearchResult {
   id: number;
@@ -30,49 +31,61 @@ interface SearchResultsProps {
 const SearchResults = React.memo(({ results }: SearchResultsProps) => {
   const navigate = useNavigate();
   return (
-    <section className="py-1 bg-gray-50  min-w-full rounded-lg ">
-      <div className=" px-4 sm:px-6 lg:px-8">
-        <div className="mb-1">
-          <h2 className="text-2xl font-bold text-foreground dark:text-black mb-2">
+    <section className="py-4 bg-white dark:bg-gray-100 min-w-full rounded-xl shadow-sm border border-border">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="mb-4">
+          <h2 className="text-2xl font-bold text-foreground dark:text-black">
             Search Results
           </h2>
-          <p className="text-muted-foreground">Found {results.length} jobs </p>
+          <p className="text-muted-foreground text-sm">
+            Found {results.length} job{results.length !== 1 ? "s" : ""}
+          </p>
         </div>
 
-        <div className="space-y-4 h-[200px] overflow-y-auto pr-2">
+        <div className="space-y-4 max-h-[350px] overflow-y-auto pr-2">
           {results.map((job) => (
             <Card
               key={job.id}
-              className="!py-2 hover:shadow-md transition-shadow dark:bg-gray-100"
+              className="transition-shadow hover:shadow-lg dark:bg-white border border-border rounded-xl"
             >
-              <CardContent className="p-1">
-                <div className="flex items-center justify-between">
-                  <div className=" space-y-1">
-                    <h3 className="text-lg font-semibold text-foreground dark:text-background">
+              <CardContent className="p-2">
+                <div className="flex justify-between items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <img
+                      src={companyLogos[job.logo]}
+                      alt={`${job.company} logo`}
+                      className="w-12 h-12 rounded-md object-contain border"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground dark:text-black">
                       {job.title}
                     </h3>
-
-                    <div className="flex flex-col md:flex-row items-left md:items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
                         <Building2 className="w-4 h-4" />
-                        <span>{job.company}</span>
+                        {job.company}
                       </div>
                       <div className="flex items-center gap-1">
                         <MapPin className="w-4 h-4" />
-                        <span>{job.location}</span>
+                        {job.location}
                       </div>
                     </div>
                   </div>
 
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex items-center gap-2"
-                    onClick={() => navigate(`/jobs/${job.id}`)}
-                  >
-                    <Eye className="w-4 h-4" />
-                    View
-                  </Button>
+                  <div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => navigate(`/jobs/${job.id}`)}
+                      className="flex items-center gap-2 hover:bg-transparent hover:text-primary dark:bg-white dark:text-black dark:hover:bg-white dark:hover:text-primary"
+                      aria-label="View Job Details"
+                    >
+                      <Eye className="w-4 h-4" />
+                      View
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>

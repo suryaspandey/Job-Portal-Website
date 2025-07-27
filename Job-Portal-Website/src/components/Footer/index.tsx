@@ -27,7 +27,7 @@ export const Footer = () => {
 
           {footerLinks.map((section, i) => (
             <div key={i} className="hidden lg:block text-sm">
-              <h4 className="text-lg font-semibold text-foreground dark:text-white mb-4">
+              <h4 className="text-lg font-semibold !text-white mb-4">
                 {section.title}
               </h4>
               <ul className="space-y-2">
@@ -64,7 +64,7 @@ export const Footer = () => {
             <Accordion type="single" collapsible className="w-full">
               {footerLinks.map((section, i) => (
                 <AccordionItem value={section.title} key={i}>
-                  <AccordionTrigger className="text-black">
+                  <AccordionTrigger className="text-black dark:text-white">
                     {section.title}
                   </AccordionTrigger>
                   <AccordionContent>
@@ -81,7 +81,7 @@ export const Footer = () => {
                                 {link.icon && (
                                   <span>
                                     <Icon
-                                      className="w-4 h-4 mt-1 text-black"
+                                      className="w-4 h-4 mt-1 text-black dark:text-white"
                                       stroke="currentColor"
                                       strokeWidth={3}
                                       fill="none"

@@ -26,7 +26,7 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => {
         </Button>
       </div>
 
-      <nav className="flex flex-col space-y-4 text-lg">
+      <nav className="flex items-center flex-col space-y-4 text-lg">
         {menuLinks.map((item) => (
           <a
             key={item.title}
@@ -41,8 +41,18 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => {
       </nav>
 
       <div className="flex flex-col gap-3 mt-6">
-        <Button variant="outline">Login</Button>
-        <Button variant="outline">Sign Up</Button>
+        <Button
+          variant="outline"
+          className="dark:bg-black dark:border-white dark:hover:bg-black"
+        >
+          Login
+        </Button>
+        <Button
+          variant="outline"
+          className="dark:bg-black dark:border-white dark:hover:bg-black"
+        >
+          Sign Up
+        </Button>
         <Button
           className="bg-primary text-primary-foreground hover:bg-primary/90"
           onClick={onClose}

@@ -19,7 +19,7 @@ export const WorkingStepCard = React.memo(
     return (
       <div key={index}>
         <Card
-          className={`bg-white px-6 !gap-1 ${
+          className={`bg-white px-6 !min-h-[300px] !gap-1 ${
             index % 2 === 0 ? "md:mt-0" : "md:mt-4"
           }`}
         >

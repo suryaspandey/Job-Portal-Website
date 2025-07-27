@@ -61,12 +61,16 @@ const JobList = () => {
               )}
 
               <div className="block md:hidden">
-                <Filter
-                  role="button"
-                  aria-label="Open filter panel"
-                  onClick={() => setOpenFilterMenu(true)}
-                  className="cursor-pointer"
-                />
+                {isLoading ? (
+                  <Skeleton className="h-8 w-8 rounded-full" />
+                ) : (
+                  <Filter
+                    role="button"
+                    aria-label="Open filter panel"
+                    onClick={() => setOpenFilterMenu(true)}
+                    className="cursor-pointer"
+                  />
+                )}
               </div>
             </div>
 

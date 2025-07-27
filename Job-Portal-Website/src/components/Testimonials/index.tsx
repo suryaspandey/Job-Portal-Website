@@ -28,7 +28,7 @@ export const Testimonials = () => {
   const activeTestimonial = testimonialData[activeIndex];
 
   return (
-    <section id="howItWorks" className=" px-4 sm:px-6 lg:px-8 py-12 ">
+    <section className=" px-4 sm:px-6 lg:px-8 py-12 ">
       <div className="max-w-7xl mx-auto">
         <div className=" mb-16 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">

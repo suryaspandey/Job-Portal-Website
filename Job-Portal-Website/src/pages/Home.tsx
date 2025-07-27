@@ -37,12 +37,11 @@ const Home = () => {
       {isLoading ? <JobRolesMarqueeSkeleton /> : <JobRolesMarquee />}
 
       {isLoading ? <StepsSkeleton /> : <HowItWorksSteps />}
+      {isLoading ? <TopCompaniesSkeleton /> : <TopCompanies />}
       {isLoading ? <JobCardsSkeleton /> : <JobCategories />}
       {isLoading ? <JobCardsSkeleton /> : <FeaturedJobs />}
       {isLoading ? <OfferSkeleton /> : <WhatWeOffer />}
       {isLoading ? <TestimonialSkeleton /> : <Testimonials />}
-
-      {isLoading ? <TopCompaniesSkeleton /> : <TopCompanies />}
 
       {isLoading ? <JobUpdatesSkeleton /> : <JobUpdates />}
       {isLoading ? <FooterSkeleton /> : <Footer />}
