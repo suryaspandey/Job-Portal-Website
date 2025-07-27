@@ -15,14 +15,14 @@ export const workingStepsList = [
   {
     title: "Upload CV/Resume",
     description:
-      "Showcase your skills and experience by uploading your latest Resume. Make it easy for employers to find you.",
+      "Showcase your skills by uploading your latest Resume. Make it easy for employers to find you.",
     icon: IoDocumentText,
     iconColor: "#00BFA5", // Teal
   },
   {
     title: "Find Suitable Jobs",
     description:
-      "Browse through thousands of job listings tailored to your expertise, interests, and goals.",
+      "Browse through thousands of job listings tailored to your expertise and goals.",
     icon: FaDotCircle,
     iconColor: "#7B61FF", // Purple
   },
