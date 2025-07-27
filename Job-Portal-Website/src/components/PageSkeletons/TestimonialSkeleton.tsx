@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const TestimonialSkeleton = () => (
+export const TestimonialSkeleton = React.memo(() => (
   <div className="flex flex-col items-center space-y-4 py-10">
     <div className="flex gap-10">
       <Skeleton key={0} className="h-10 w-10 rounded-full" />
@@ -9,4 +10,4 @@ export const TestimonialSkeleton = () => (
     </div>
     <Skeleton className="h-32 w-full max-w-xl rounded-xl mt-6" />
   </div>
-);
+));

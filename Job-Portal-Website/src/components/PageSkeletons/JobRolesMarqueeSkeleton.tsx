@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const JobRolesMarqueeSkeleton = () => {
+export const JobRolesMarqueeSkeleton = React.memo(() => {
   return (
     <div className="flex items-center gap-6 overflow-x-auto py-6 px-4">
       {[...Array(6)].map((_, idx) => (
@@ -14,6 +15,6 @@ export const JobRolesMarqueeSkeleton = () => {
       ))}
     </div>
   );
-};
+});
 
 export default JobRolesMarqueeSkeleton;

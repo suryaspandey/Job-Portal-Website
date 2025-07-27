@@ -5,13 +5,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+interface FilterSectionProp {
+  title: string;
+  items: string[];
+  filterKey: string;
+  selectedFilters: never[];
+  updateFilter: (filterKey: string, value: any) => void;
+}
 const FilterSection = ({
   title,
   items,
   filterKey,
   selectedFilters,
   updateFilter,
-}) => {
+}: FilterSectionProp) => {
   return (
     <AccordionItem value={title}>
       <AccordionTrigger className="text-sm font-medium">

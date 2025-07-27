@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const JobRecommendationCardSkeleton = () => {
+export const JobRecommendationCardSkeleton = React.memo(() => {
   return (
     <div className="p-6 border rounded-xl space-y-4 w-full">
       <div className="flex justify-between items-center">
@@ -45,4 +46,4 @@ export const JobRecommendationCardSkeleton = () => {
       </div>
     </div>
   );
-};
+});

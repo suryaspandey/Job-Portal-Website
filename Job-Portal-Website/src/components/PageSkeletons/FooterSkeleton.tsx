@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const FooterSkeleton = () => {
+export const FooterSkeleton = React.memo(() => {
   return (
     <footer className="bg-gray-100 px-6 py-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -24,4 +25,4 @@ export const FooterSkeleton = () => {
       </div>
     </footer>
   );
-};
+});

@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const FindJobCardSkeleton = () => (
+export const FindJobCardSkeleton = React.memo(() => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
     {[...Array(1)].map((_, i) => (
       <div className="border p-4 h-64 w-72 rounded-lg flex flex-col justify-between">
@@ -26,4 +27,4 @@ export const FindJobCardSkeleton = () => (
       </div>
     ))}
   </div>
-);
+));

@@ -1,8 +1,46 @@
 import { MapPin, ThumbsDown, ThumbsUp, UserRound } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import JobBenefitIcons from "../JobBenefitIcons";
+interface JobTabs {
+  description: string;
+  education: string;
+  totalApplicants: number;
+}
 
-export const CompanyOverViewAndBenefits = ({ details }: any) => {
+interface CompanyOverview {
+  description: string;
+  size: string;
+  location: string;
+}
+
+interface Benefit {
+  label: string;
+}
+
+export interface JobDetailsProp {
+  title: string;
+  company: string;
+  logo: string;
+  location: string;
+  type: string;
+  officeType: string;
+  salary: string;
+  mode: string;
+  experience: string;
+  positions: string;
+  jobTabs: JobTabs;
+  skillsAndExperience: string[];
+  companyOverview: CompanyOverview;
+  reviews: string[];
+  benefitsAndPerks: Benefit[];
+}
+
+interface CompanyOverViewAndBenefitsProps {
+  details: JobDetailsProp;
+}
+export const CompanyOverViewAndBenefits = ({
+  details,
+}: CompanyOverViewAndBenefitsProps) => {
   return (
     <div className="h-[620px] ">
       <Card className="h-full overflow-y-auto">

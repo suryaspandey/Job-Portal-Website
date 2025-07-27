@@ -1,7 +1,45 @@
 import { Users } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
-export const JobDetailsTab = ({ details }) => {
+interface JobTabs {
+  description: string;
+  education: string;
+  totalApplicants: number;
+}
+
+interface CompanyOverview {
+  description: string;
+  size: string;
+  location: string;
+}
+
+interface Benefit {
+  label: string;
+}
+
+export interface JobDetailsProp {
+  title: string;
+  company: string;
+  logo: string;
+  location: string;
+  type: string;
+  officeType: string;
+  salary: string;
+  mode: string;
+  experience: string;
+  positions: string;
+  jobTabs: JobTabs;
+  skillsAndExperience: string[];
+  companyOverview: CompanyOverview;
+  reviews: string[];
+  benefitsAndPerks: Benefit[];
+}
+
+interface JobDetailsTabProps {
+  details: JobDetailsProp;
+}
+
+export const JobDetailsTab = ({ details }: JobDetailsTabProps) => {
   return (
     <>
       <Tabs defaultValue="description" className="w-full">

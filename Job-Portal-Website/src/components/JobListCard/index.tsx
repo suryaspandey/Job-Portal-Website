@@ -5,8 +5,30 @@ import { companyLogos } from "../FeaturedJobs/constants";
 import { Badge } from "../ui/badge";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import React from "react";
 
-export const JobListCard = ({ job }) => {
+interface JobListProp {
+  job: {
+    id: number;
+    title: string;
+    opening: string;
+    yearOfExperience: number;
+    company: string;
+    location: string;
+    type: string;
+    officeType: string;
+    salary: number;
+    logo: string;
+    companyType: string;
+    industryType: string;
+    datePosted: string;
+    tags: string[];
+    positions: string;
+    description: string;
+  };
+}
+
+export const JobListCard = React.memo(({ job }: JobListProp) => {
   const navigate = useNavigate();
   return (
     <Card
@@ -122,6 +144,6 @@ export const JobListCard = ({ job }) => {
       </CardContent>
     </Card>
   );
-};
+});
 
 export default JobListCard;

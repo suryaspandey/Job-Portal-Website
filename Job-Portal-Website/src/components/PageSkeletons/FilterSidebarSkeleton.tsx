@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export default function FilterSidebarSkeleton() {
+export const FilterSidebarSkeleton = React.memo(() => {
   const filterSections = Array.from({ length: 5 });
 
   return (
@@ -23,4 +24,6 @@ export default function FilterSidebarSkeleton() {
       ))}
     </div>
   );
-}
+});
+
+export default FilterSidebarSkeleton;

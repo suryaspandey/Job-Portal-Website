@@ -2,8 +2,32 @@ import { Building2, Eye, MapPin } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
-const SearchResults = ({ results }: any) => {
+interface SearchResult {
+  id: number;
+  company: string;
+  companyType: string;
+  datePosted: string;
+  description: string;
+  industryType: string;
+  location: string;
+  logo: string;
+  officeType: string;
+  opening: string;
+  positions: string;
+  salary: number;
+  tags: string[];
+  title: string;
+  type: string;
+  yearOfExperience: number;
+}
+
+interface SearchResultsProps {
+  results: SearchResult[];
+}
+
+const SearchResults = React.memo(({ results }: SearchResultsProps) => {
   const navigate = useNavigate();
   return (
     <section className="py-1 bg-gray-50  min-w-full rounded-lg ">
@@ -68,6 +92,6 @@ const SearchResults = ({ results }: any) => {
       </div>
     </section>
   );
-};
+});
 
 export default SearchResults;

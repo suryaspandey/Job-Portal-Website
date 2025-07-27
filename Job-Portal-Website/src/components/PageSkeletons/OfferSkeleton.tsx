@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const OfferSkeleton = () => (
+export const OfferSkeleton = React.memo(() => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
     {[...Array(3)].map((_, i) => (
       <div key={i} className="space-y-3">
@@ -10,4 +11,4 @@ export const OfferSkeleton = () => (
       </div>
     ))}
   </div>
-);
+));

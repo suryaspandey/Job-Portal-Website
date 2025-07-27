@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const CompanyOverviewCardSkeleton = () => (
+export const CompanyOverviewCardSkeleton = React.memo(() => (
   <div className="p-6 rounded-xl border w-full space-y-6">
     <Skeleton className="h-5 w-40" />
 
@@ -34,4 +35,4 @@ export const CompanyOverviewCardSkeleton = () => (
       </div>
     </div>
   </div>
-);
+));

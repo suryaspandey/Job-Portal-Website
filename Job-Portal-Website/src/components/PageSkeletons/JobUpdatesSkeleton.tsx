@@ -1,6 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
+import React from "react";
 
-const JobUpdatesSkeleton = () => {
+const JobUpdatesSkeleton = React.memo(() => {
   return (
     <div className="max-w-5xl mx-auto flex items-center justify-between gap-4 p-6">
       <div className="flex-1 space-y-4">
@@ -15,6 +16,6 @@ const JobUpdatesSkeleton = () => {
       <Skeleton className="h-40 w-32 rounded-md" />
     </div>
   );
-};
+});
 
 export default JobUpdatesSkeleton;

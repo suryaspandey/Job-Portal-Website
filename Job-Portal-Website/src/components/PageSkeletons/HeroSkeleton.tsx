@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-export const HeroSkeleton = () => (
+export const HeroSkeleton = React.memo(() => (
   <div className="space-y-4 py-12">
     <Skeleton className="h-8 w-1/2 mx-auto" />
     <Skeleton className="h-6 w-1/3 mx-auto" />
@@ -20,4 +21,4 @@ export const HeroSkeleton = () => (
       <Skeleton className="h-8 w-32" />
     </div>
   </div>
-);
+));

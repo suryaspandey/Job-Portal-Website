@@ -1,6 +1,7 @@
+import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-const NavbarSkeleton = () => {
+const NavbarSkeleton = React.memo(() => {
   return (
     <div className=" mx-auto flex justify-between items-center pl-8 md:pl-80 py-3 pr-6 border-b bg-white dark:bg-background">
       <Skeleton className="h-6 w-[100px] rounded-md" />
@@ -23,6 +24,6 @@ const NavbarSkeleton = () => {
       </div>
     </div>
   );
-};
+});
 
 export default NavbarSkeleton;
