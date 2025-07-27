@@ -8,7 +8,7 @@ export const offerDetails = [
   {
     image: offer1,
     title: "Job recommendation",
-    description: "some job recommendation description ",
+    description: "Tailored job suggestions for you",
     numberImg: one,
   },
   {

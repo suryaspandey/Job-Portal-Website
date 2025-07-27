@@ -8,19 +8,19 @@ export const JobDetailsTab = ({ details }) => {
         <TabsList className="grid w-full grid-cols-3 h-12 bg-transparent p-0 border-b border-gray-200">
           <TabsTrigger
             value="description"
-            className="h-full bg-transparent border-none border-b-2 border-b-transparent data-[state=active]:border-b-primary data-[state=active]:text-primary rounded-none text-muted-foreground hover:text-foreground"
+            className="h-full bg-transparent dark:!bg-black border-none border-b-2 border-b-transparent data-[state=active]:border-b-primary data-[state=active]:text-primary dark:data-[state=active]:text-primary rounded-none text-muted-foreground hover:text-foreground"
           >
             Job Description
           </TabsTrigger>
           <TabsTrigger
             value="education"
-            className="h-full bg-transparent border-none border-b-2 border-b-transparent data-[state=active]:border-b-primary data-[state=active]:text-primary rounded-none text-muted-foreground hover:text-foreground"
+            className="h-full bg-transparent dark:!bg-black border-none border-b-2 border-b-transparent data-[state=active]:border-b-primary data-[state=active]:text-primary dark:data-[state=active]:text-primary rounded-none text-muted-foreground hover:text-foreground"
           >
             Education
           </TabsTrigger>
           <TabsTrigger
             value="applicants"
-            className="h-full bg-transparent border-none border-b-2 border-b-transparent data-[state=active]:border-b-primary data-[state=active]:text-primary rounded-none text-muted-foreground hover:text-foreground"
+            className="h-full bg-transparent dark:!bg-black border-none border-b-2 border-b-transparent data-[state=active]:border-b-primary data-[state=active]:text-primary dark:data-[state=active]:text-primary rounded-none text-muted-foreground hover:text-foreground"
           >
             Total Applicants
           </TabsTrigger>

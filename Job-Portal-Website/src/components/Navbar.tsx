@@ -5,6 +5,7 @@ import MobileMenu from "./MobileMenu";
 import { menuLinks } from "./MobileMenu/constants";
 import ToggleTheme from "./ToggleTheme";
 import { useNavigate } from "react-router-dom";
+import Logo from "@/assets/logos/jobLogo.png";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,11 +18,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div
-              className="text-2xl font-bold text-primary cursor-pointer"
-              onClick={() => navigate("/")}
-            >
-              Job<span className="text-foreground">hunt</span>
+            <div className="w-20 cursor-pointer" onClick={() => navigate("/")}>
+              <img src={Logo} alt="Job Hunt" />
             </div>
           </div>
 
@@ -39,13 +37,13 @@ export const Navbar = () => {
             </nav>
             <Button
               variant="outline"
-              className="text-foreground hover:!text-primary hover:!bg-white"
+              className="text-foreground hover:!text-primary hover:!bg-white  dark:border-white dark:bg-black"
             >
               Login
             </Button>
             <Button
               variant="outline"
-              className="text-foreground hover:!text-primary hover:!bg-white"
+              className="text-foreground hover:!text-primary hover:!bg-white dark:border-white dark:bg-black"
             >
               Sign Up
             </Button>

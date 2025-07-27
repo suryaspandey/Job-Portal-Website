@@ -34,7 +34,7 @@ const JobList = () => {
   const totalPages = Math.ceil(currentJobList.length / pageSize);
 
   return (
-    <div className="min-h-screen bg-purple-50 dark:bg-black pt-[72px]">
+    <div className="min-h-screen bg-gray-100 dark:bg-black pt-[72px]">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-8">
           <div className="hidden md:block">
@@ -87,7 +87,7 @@ const JobList = () => {
               </div>
             )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">             
               {isLoading ? (
                 Array.from({ length: pageSize }).map((_, index) => (
                   <FindJobCardSkeleton key={index} />
@@ -100,60 +100,60 @@ const JobList = () => {
                   .map((job) => <JobListCard key={job.id} job={job} />)
               )}
             </div>
-            {currentJobList.length > pageSize && (
-              <div className="mt-8 flex justify-center bg-white">
-                <Pagination>
-                  <PaginationContent className="gap-2">
-                    <PaginationItem>
-                      <button
-                        onClick={() =>
-                          setCurrentPage((prev) => Math.max(prev - 1, 0))
-                        }
-                        disabled={currentPage === 0}
-                        className="px-3 py-1  disabled:opacity-50"
-                      >
-                        <ChevronLeft />
-                      </button>
-                    </PaginationItem>
-
-                    {Array.from({ length: totalPages }, (_, idx) => (
-                      <PaginationItem key={idx}>
-                        <button
-                          onClick={() => setCurrentPage(idx)}
-                          className={`px-3 py-1  ${
-                            currentPage === idx ? "font-bold" : ""
-                          }`}
-                        >
-                          {idx + 1}
-                        </button>
-                      </PaginationItem>
-                    ))}
-
-                    <PaginationItem>
-                      <button
-                        onClick={() =>
-                          setCurrentPage((prev) =>
-                            Math.min(
-                              prev + 1,
-                              Math.ceil(currentJobList.length / pageSize) - 1
-                            )
-                          )
-                        }
-                        disabled={
-                          currentPage ===
-                          Math.ceil(currentJobList.length / pageSize) - 1
-                        }
-                        className="px-3 py-1 disabled:opacity-50"
-                      >
-                        <ChevronRight />
-                      </button>
-                    </PaginationItem>
-                  </PaginationContent>
-                </Pagination>
-              </div>
-            )}
           </div>
         </div>
+        {currentJobList.length > pageSize && (
+          <div className="mt-8 p-8 rounded-lg flex justify-center bg-white dark:bg-black">
+            <Pagination>
+              <PaginationContent className="gap-2">
+                <PaginationItem>
+                  <button
+                    onClick={() =>
+                      setCurrentPage((prev) => Math.max(prev - 1, 0))
+                    }
+                    disabled={currentPage === 0}
+                    className="px-3 py-1  disabled:opacity-50"
+                  >
+                    <ChevronLeft />
+                  </button>
+                </PaginationItem>
+
+                {Array.from({ length: totalPages }, (_, idx) => (
+                  <PaginationItem key={idx}>
+                    <button
+                      onClick={() => setCurrentPage(idx)}
+                      className={`px-3 py-1  ${
+                        currentPage === idx ? "font-bold" : ""
+                      }`}
+                    >
+                      {idx + 1}
+                    </button>
+                  </PaginationItem>
+                ))}
+
+                <PaginationItem>
+                  <button
+                    onClick={() =>
+                      setCurrentPage((prev) =>
+                        Math.min(
+                          prev + 1,
+                          Math.ceil(currentJobList.length / pageSize) - 1
+                        )
+                      )
+                    }
+                    disabled={
+                      currentPage ===
+                      Math.ceil(currentJobList.length / pageSize) - 1
+                    }
+                    className="px-3 py-1 disabled:opacity-50"
+                  >
+                    <ChevronRight />
+                  </button>
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
+        )}
         <Footer />
       </div>
     </div>

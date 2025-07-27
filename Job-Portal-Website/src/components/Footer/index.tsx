@@ -5,18 +5,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { footerLinks } from "./constants";
+import Logo from "@/assets/logos/jobLogo.png";
 
 export const Footer = () => {
   return (
-    <>
+    <div className="bg-gray-100 dark:bg-black">
       <footer
         id="footer"
-        className="max-w-7xl mx-auto flex justify-center px-4 py-6"
+        className="max-w-7xl mx-auto flex justify-center px-4 py-6 "
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1 space-y-4">
-            <div className="text-2xl font-bold text-primary">
-              Job<span className="text-foreground">hunt</span>
+            <div className="w-20">
+              <img src={Logo} alt="Job Hunt" />
             </div>
             <p className="text-muted-foreground text-sm mb-4 max-w-md">
               Your trusted partner in finding the perfect career opportunity. We
@@ -26,7 +27,7 @@ export const Footer = () => {
 
           {footerLinks.map((section, i) => (
             <div key={i} className="hidden lg:block text-sm">
-              <h4 className="text-lg font-semibold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-foreground dark:text-white mb-4">
                 {section.title}
               </h4>
               <ul className="space-y-2">
@@ -63,7 +64,9 @@ export const Footer = () => {
             <Accordion type="single" collapsible className="w-full">
               {footerLinks.map((section, i) => (
                 <AccordionItem value={section.title} key={i}>
-                  <AccordionTrigger>{section.title}</AccordionTrigger>
+                  <AccordionTrigger className="text-black">
+                    {section.title}
+                  </AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-2 pl-2">
                       {section.links.map((link, idx) => {
@@ -78,7 +81,7 @@ export const Footer = () => {
                                 {link.icon && (
                                   <span>
                                     <Icon
-                                      className="w-4 h-4 mt-1 text-black dark:text-foreground"
+                                      className="w-4 h-4 mt-1 text-black"
                                       stroke="currentColor"
                                       strokeWidth={3}
                                       fill="none"
@@ -104,7 +107,7 @@ export const Footer = () => {
           © Copyright {new Date().getFullYear()} Jobhunt. All rights reserved.
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

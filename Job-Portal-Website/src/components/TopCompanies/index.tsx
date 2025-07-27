@@ -3,7 +3,7 @@ import { topCompanies } from "./constants";
 
 export const TopCompanies = () => {
   return (
-    <section className="py-20 bg-gray-100 dark:bg-white">
+    <section className=" py-2 md:py-20 dark:bg-white">
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className=" mb-16 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">

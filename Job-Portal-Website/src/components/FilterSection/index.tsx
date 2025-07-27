@@ -22,6 +22,7 @@ const FilterSection = ({
           {items?.map((item) => (
             <div key={item} className="flex items-center space-x-2">
               <Checkbox
+                className="dark:!border-white"
                 id={`${filterKey}-${item}`}
                 checked={selectedFilters.includes(item)}
                 onCheckedChange={() => updateFilter(filterKey, item)}

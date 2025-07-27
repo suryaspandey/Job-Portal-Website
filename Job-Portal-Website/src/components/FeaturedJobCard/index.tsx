@@ -28,7 +28,7 @@ export const FeaturedJobCard = ({ jobDetails }: FeaturedJobDetailsProps) => {
       key={jobDetails.id}
       className={`group p-3 mb-2 w-full dark:border-white/50 cursor-pointer !gap-2 ${
         isMobile ? "h-64" : "h-56"
-      } bg-white dark:bg-gray-100 shadow-md hover:shadow-lg hover:bg-primary dark:hover:bg-primary transition-shadow duration-300`}
+      } bg-white  shadow-md hover:shadow-lg hover:bg-primary dark:hover:bg-primary transition-shadow duration-300`}
       onClick={() => navigate(`/jobs/${jobDetails.id}`)}
     >
       <div className="flex items-center mb-2 gap-3">

@@ -13,7 +13,7 @@ export const FeaturedJobs = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="featuredJobs" className="py-20 bg-gray-100 dark:bg-white">
+    <section id="featuredJobs" className="py-2 md:py-20  dark:bg-white">
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className=" mb-16  items-center">
           <div className="flex-wrap md:flex justify-between items-center">
@@ -27,7 +27,7 @@ export const FeaturedJobs = () => {
 
             <Button
               variant="outline"
-              className="flex justify-end text-primary cursor-pointer mb-4"
+              className="flex justify-end text-primary cursor-pointer mb-4 hover:bg-white hover:text-primary dark:bg-white dark:hover:bg-white dark:hover:text-primary"
               onClick={() => navigate("/jobs")}
             >
               View All Jobs
@@ -55,7 +55,7 @@ export const FeaturedJobs = () => {
               ))}
           </Swiper>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="bg-gray-100 p-4 rounded-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {featuredJobs
               .filter((jb) => jb.id <= 6)
               .map((job, index) => {

@@ -13,7 +13,7 @@ export const workingStepsList = [
     iconColor: "#ff8c00", // Orange
   },
   {
-    title: "Upload CV/Resume",
+    title: "Upload Resume",
     description:
       "Showcase your skills by uploading your latest Resume. Make it easy for employers to find you.",
     icon: IoDocumentText,
@@ -29,7 +29,7 @@ export const workingStepsList = [
   {
     title: "Apply for Job",
     description:
-      "Send your application directly and boost your chances of getting hired faster with real-time alerts.",
+      "Send your application directly to boost your chances of getting hired with real-time alerts.",
     icon: PiBagSimpleFill,
     iconColor: "#f8e963", // Yellow
   },

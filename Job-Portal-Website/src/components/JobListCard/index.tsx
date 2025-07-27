@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 import { companyLogos } from "../FeaturedJobs/constants";
 import { Badge } from "../ui/badge";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export const JobListCard = ({ job }) => {
   const navigate = useNavigate();
@@ -99,12 +100,20 @@ export const JobListCard = ({ job }) => {
         </div>
 
         <div className="flex gap-2 pt-2">
-          <Button className=" bg-primary rounded-xl text-[12px] hover:!bg-transparent">
+          <Button
+            className=" bg-primary rounded-xl text-[12px] hover:bg-primary/80 hover:!text-white"
+            onClick={() =>
+              toast("Job Applied Successfully!", {
+                className:
+                  "!bg-white dark:bg-white text-black dark:!text-black border border-gray-300 shadow-md",
+              })
+            }
+          >
             Apply Now
           </Button>
           <Button
             variant="outline"
-            className="border-black rounded-xl text-[12px] dark:bg-transparent dark:text-black"
+            className="border-black hover:bg-transparent hover:text-primary rounded-xl text-[12px] dark:!bg-transparent dark:text-black dark:hover:text-primary"
             onClick={() => navigate(`/jobs/${job.id}`)}
           >
             View Details

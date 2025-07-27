@@ -20,6 +20,8 @@ import "swiper/css/navigation";
 import { JobDescriptionCardSkeleton } from "@/components/PageSkeletons/JobDescriptionCardSkeleton";
 import { CompanyOverviewCardSkeleton } from "@/components/PageSkeletons/CompanyOverviewCardSkeleton";
 import { JobRecommendationCardSkeleton } from "@/components/PageSkeletons/JobRecommendationCardSkeleton";
+import Footer from "@/components/Footer";
+import { toast } from "sonner";
 const JobDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -58,8 +60,8 @@ const JobDetails = () => {
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 bg-white border-0 md:border border-gray-300 rounded-none md:rounded-lg flex items-center justify-center text-2xl">
                         <img
-                          src={companyLogos[details.logo]}
-                          alt={details.logo}
+                          src={companyLogos[details?.logo]}
+                          alt={details?.company}
                           className="w-10 h-10 rounded-full"
                         />
                       </div>
@@ -88,7 +90,16 @@ const JobDetails = () => {
                       </div>
                     </div>
 
-                    <Button className="mt-2 md:mt-0 w-full md:w-auto" size="lg">
+                    <Button
+                      className="mt-2 md:mt-0 w-full md:w-auto"
+                      size="lg"
+                      onClick={() =>
+                        toast("Job Applied Successfully!", {
+                          className:
+                            "!bg-white dark:bg-white text-black dark:!text-black border border-gray-300 shadow-md",
+                        })
+                      }
+                    >
                       Apply Now
                     </Button>
                   </div>
@@ -100,18 +111,14 @@ const JobDetails = () => {
           </div>
 
           {isLoading ? (
-            <>
-              <CompanyOverviewCardSkeleton />
-            </>
+            <CompanyOverviewCardSkeleton />
           ) : (
             <CompanyOverViewAndBenefits details={details} />
           )}
         </div>
 
         {isLoading ? (
-          <>
-            <JobRecommendationCardSkeleton />
-          </>
+          <JobRecommendationCardSkeleton />
         ) : (
           <Card className="mt-10">
             <CardHeader className="text-2xl font-bold text-foreground">
@@ -119,7 +126,7 @@ const JobDetails = () => {
                 <h1>Job Recommendation For You</h1>
                 <Button
                   variant="outline"
-                  className="text-primary cursor-pointer"
+                  className="dark:bg-black hover:bg-primary hover:text-white dark:hover:bg-primary text-primary cursor-pointer"
                   onClick={() => navigate("/jobs")}
                 >
                   View All
@@ -155,6 +162,7 @@ const JobDetails = () => {
           </Card>
         )}
       </div>
+      <Footer />
     </section>
   );
 };

@@ -24,9 +24,9 @@ export const CompanyOverViewAndBenefits = ({ details }: any) => {
               <span>{details?.companyOverview?.size}</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
-                <div className="bg-blue-50 p-2 rounded-full">
-              <MapPin className="w-4 h-4 text-blue-600 fill-blue-600" />
-                </div>
+              <div className="bg-blue-50 p-2 rounded-full">
+                <MapPin className="w-4 h-4 text-blue-600 fill-blue-600" />
+              </div>
               <span>{details?.companyOverview?.location}</span>
             </div>
           </div>
@@ -50,7 +50,7 @@ export const CompanyOverViewAndBenefits = ({ details }: any) => {
                       <ThumbsDown className="w-4 h-4 text-red-600 fill-red-600" />
                     </div>
                   )}
-                  <span>{cleanedReview}</span>
+                  <span style={{ padding: "4px" }}>{cleanedReview}</span>
                 </div>
               );
             })}

@@ -172,8 +172,7 @@ export const JobFilter = ({
       ) : (
         <div className="w-64 flex-shrink-0 ">
           <Card className="p-6 h-[800px] md:h-[1130px]">
-    
-            <div className="flex items-center justify-between mb-6 ">
+            <div className="flex items-center justify-between mb-0 ">
               <div>
                 <h3 className="font-semibold text-lg">Filter Jobs</h3>
                 {isMobile && (
@@ -192,6 +191,7 @@ export const JobFilter = ({
               </div>
               <Button
                 variant="outline"
+                className="border rounded-xl border-primary hover:bg-transparent hover:text-foreground dark:border-primary text-primary"
                 size="sm"
                 onClick={() => {
                   setFilters({
@@ -209,6 +209,7 @@ export const JobFilter = ({
                 {isMobile ? <FunnelX className="h-10 w-10 " /> : "Clear All"}
               </Button>
             </div>
+            <hr />
 
             <Accordion
               type="multiple"

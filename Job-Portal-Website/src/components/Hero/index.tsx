@@ -15,9 +15,11 @@ import { useState } from "react";
 
 import jobList from "../../data/jobList.json";
 import SearchResults from "../SearchResults";
+import useMobile from "@/hooks/useMobile";
 
 export const Hero = () => {
   const navigate = useNavigate();
+  const isMobile = useMobile();
 
   const [result, setResult] = useState([]);
   const [jobTitle, setJobTitle] = useState([]);
@@ -47,6 +49,10 @@ export const Hero = () => {
 
     setResult(filteredResults);
   };
+
+  const filteredKeywords = isMobile
+    ? jobSearchKeywords.slice(0, 4)
+    : jobSearchKeywords;
 
   return (
     <section className=" min-h-[55vh] md:min-h-[80vh] flex flex-col items-center justify-center overflow-hidden px-4 md:px-6">
@@ -162,10 +168,10 @@ export const Hero = () => {
             <>
               <div className="max-w-4xl mx-auto pt-8">
                 <div className="flex flex-wrap justify-center gap-3 mb-8">
-                  {jobSearchKeywords.map((job, index) => (
+                  {filteredKeywords.map((job, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 bg-white border border-border rounded-full text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+                      className="px-2 md:px-4 py-1 md:py-2 bg-white border border-border rounded-full text-[12px] md:text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
                     >
                       {job}
                     </span>
@@ -184,7 +190,7 @@ export const Hero = () => {
                   <Button
                     variant="ghost"
                     size="lg"
-                    className=" cursor-pointer text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg font-medium flex items-center gap-2 "
+                    className="cursor-pointer border border-transparent text-primary px-8 py-3 text-lg font-medium flex items-center gap-2 transition-all duration-300 hover:border-primary hover:bg-transparent hover:text-primary dark:hover:bg-transparent"
                   >
                     <FaPlayCircle
                       className="cursor-pointer"

@@ -16,7 +16,7 @@ export const HowItWorksSteps = () => {
             of top jobs. Follow these simple steps to get started:
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-gray-100 p-4 rounded-lg grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {workingStepsList.map((step, index) => {
             return <WorkingStepCard step={step} index={index} />;
           })}

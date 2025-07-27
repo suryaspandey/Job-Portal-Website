@@ -15,7 +15,7 @@ const JobCategories = () => {
   const categoriesToRender = isMobile ? filteredCategories : jobCategories;
   
   return (
-    <section className="py-20 bg-background">
+    <section className="py-2 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -25,7 +25,7 @@ const JobCategories = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2  lg:grid-cols-4 gap-2 md:gap-6 bg-gray-50 p-2 md:p-4 rounded-lg">
+        <div className="grid grid-cols-2  lg:grid-cols-4 gap-2 md:gap-6 bg-gray-100 p-2 md:p-4 rounded-lg">
           {categoriesToRender.map((category, index) => (
             <Card
               key={index}

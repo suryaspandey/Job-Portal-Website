@@ -1,17 +1,20 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { menuLinks } from "./constants";
+import { useNavigate } from "react-router-dom";
+import Logo from "@/assets/logos/jobLogo.png";
 
 interface MobileMenuProps {
   onClose: () => void;
 }
 
 const MobileMenu = ({ onClose }: MobileMenuProps) => {
+  const navigate = useNavigate();
   return (
     <div className="fixed inset-0 bg-background z-50 p-6 flex flex-col gap-6">
       <div className="flex justify-between items-center">
-        <div className="text-2xl font-bold text-primary">
-          Job<span className="text-foreground">hunt</span>
+        <div className="w-20" onClick={() => navigate("/")}>
+          <img src={Logo} alt="Job Hunt" />
         </div>
         <Button variant="ghost" size="icon" onClick={onClose}>
           <X className="h-5 w-5" />

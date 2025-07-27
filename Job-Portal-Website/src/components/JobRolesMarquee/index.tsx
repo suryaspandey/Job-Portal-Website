@@ -2,12 +2,12 @@ import { jobRolesList } from "./constants";
 
 export const JobRolesMarquee = () => {
   return (
-    <section className=" w-full overflow-hidden py-4">
-      <div className="animate-marquee whitespace-nowrap flex gap-4 mb-4">
+    <section className=" w-full overflow-hidden py-4 bg-gray-100">
+      <div className="animate-marquee whitespace-nowrap flex gap-4 mb-4 ">
         {jobRolesList.concat(jobRolesList).map((role, index) => (
           <div
             key={index}
-            className="px-4 py-2 whitespace-nowrap border border-border rounded-full text-sm text-muted-foreground cursor-pointer"
+            className="px-4 py-2 whitespace-nowrap border border-border rounded-full text-sm text-muted-foreground bg-white cursor-pointer"
           >
             {role}
           </div>
@@ -17,7 +17,7 @@ export const JobRolesMarquee = () => {
         {jobRolesList.concat(jobRolesList).map((role, index) => (
           <div
             key={index}
-            className="px-4 py-2 whitespace-nowrap border border-border rounded-full text-sm text-muted-foreground cursor-pointer"
+            className="px-4 py-2 whitespace-nowrap border border-border rounded-full text-sm text-muted-foreground bg-white cursor-pointer"
           >
             {role}
           </div>

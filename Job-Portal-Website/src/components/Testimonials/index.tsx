@@ -47,9 +47,9 @@ export const Testimonials = () => {
               loop: true,
             }}
             setApi={setApi}
-            className="w-full max-w-lg"
+            className="w-[240px] max-w-lg"
           >
-            <CarouselContent>
+            <CarouselContent className="flex gap-2">
               {testimonialData.map((testimonial, index) => (
                 <CarouselItem
                   key={index}
@@ -70,11 +70,11 @@ export const Testimonials = () => {
               ))}
             </CarouselContent>
             <CarouselPrevious
-              className="border-transparent"
+              className="border-transparent dark:border-transparent hover: !bg-transparent hover:text-black dark:hover:!text-white"
               onClick={() => api?.scrollPrev()}
             />
             <CarouselNext
-              className="border-transparent"
+              className="border-transparent dark:border-transparent hover: !bg-transparent hover:text-black dark:hover:!text-white"
               onClick={() => api?.scrollNext()}
             />
           </Carousel>
