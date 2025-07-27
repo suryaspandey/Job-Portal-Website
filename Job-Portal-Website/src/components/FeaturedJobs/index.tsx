@@ -43,17 +43,21 @@ export const FeaturedJobs = () => {
             pagination={{ clickable: true }}
             modules={[Pagination]}
           >
-            {featuredJobs.map((job, index) => (
-              <SwiperSlide key={index}>
-                <FeaturedJobCard jobDetails={job} />
-              </SwiperSlide>
-            ))}
+            {featuredJobs
+              .filter((jb) => jb.id <= 4)
+              .map((job, index) => (
+                <SwiperSlide key={index}>
+                  <FeaturedJobCard jobDetails={job} />
+                </SwiperSlide>
+              ))}
           </Swiper>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {featuredJobs.map((job) => {
-              return <FeaturedJobCard jobDetails={job} />;
-            })}
+            {featuredJobs
+              .filter((jb) => jb.id <= 6)
+              .map((job, index) => {
+                return <FeaturedJobCard key={index} jobDetails={job} />;
+              })}
           </div>
         )}
       </div>
