@@ -1,69 +1,88 @@
-# React + TypeScript + Vite
+#  JobHunt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JobHunt is a modern, responsive job listing web application built using React.js and Tailwind CSS. It allows users to browse job openings by category, location, and other filters
 
-Currently, two official plugins are available:
+🚀 [Live Demo](https://job-portal-job-hunt.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔍 Filter jobs by role,location,company type,industry, salary, experience, date posted and job type
+- 💼 View detailed job descriptions
+- 📱 Responsive layout optimized for mobile and desktop
+- 💡 Modern UI with ShadCN components and hover effects
+- 🎠 Carousel for testimonials or company highlights
+- 📦 Skeleton loader for improved UX on slower networks
+- 🕵️‍♀️ Follows accessibility best practices with aria-labels and semantic tags
+- 🧭 Clear call-to-action buttons for job applications
+- 🌙 Dark mode compatible 
+- ⚡ Fast and performant with lazy loading
+- 🔁 Reusable & Modular Code Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (with Vite) + TypeScript
+- **Styling:** Tailwind CSS + ShadCN UI
+- **Icons:** Lucide React
+- **Deployment:** Netlify
+
+---
+
+```
+📁 Project Structure
+/src
+│
+├── assets/               # Static assets like images and logos
+│   ├── images/
+│   └── logos/
+│
+├── components/           # Reusable UI components
+│   └── [ComponentName]/
+│       ├── index.tsx
+│       └── constants.ts  # Optional, only if needed for that component
+│
+├── data/                 # Static or mock data
+│   ├── jobDetails.json
+│   └── jobList.json
+│
+├── hooks/                # Custom React hooks
+│
+├── pages/                # Page-level components
+│
+├── App.tsx               # Root component
+└── main.tsx              # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🚀 Getting Started Locally
+
+### 1. Clone the Repo
+
+
+git clone [git clone https://github.com/suryaspandey/Job-Portal-Website.git](https://github.com/suryaspandey/Job-Portal-Website.git)
+https://github.com/suryaspandey/Job-Portal-Website.git
+
+cd Job-Portal-Website
+
+
+### 2. Install Dependencies
+npm install
+
+
+### 3. Run the App
+
+npm run dev
+
+### 4. Build for Production
+
+npm run build
+
