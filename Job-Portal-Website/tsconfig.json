@@ -11,8 +11,9 @@
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "noEmit": false,
+    "noEmit": true,
+    "composite": true
   },
-    "include": ["src"]
+    
 
 }
