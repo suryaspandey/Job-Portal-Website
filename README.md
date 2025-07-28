@@ -69,7 +69,6 @@ JobHunt is a modern, responsive job listing web application built using React.js
 
 
 git clone [git clone https://github.com/suryaspandey/Job-Portal-Website.git](https://github.com/suryaspandey/Job-Portal-Website.git)
-https://github.com/suryaspandey/Job-Portal-Website.git
 
 cd Job-Portal-Website
 
