@@ -27,7 +27,7 @@ export const Footer = () => {
 
           {footerLinks.map((section, i) => (
             <div key={i} className="hidden lg:block text-sm">
-              <h4 className="text-lg font-semibold !text-white mb-4">
+              <h4 className="text-lg font-semibold !text-black dark:!text-white mb-4">
                 {section.title}
               </h4>
               <ul className="space-y-2">

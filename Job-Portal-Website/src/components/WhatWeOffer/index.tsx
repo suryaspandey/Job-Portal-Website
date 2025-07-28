@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { offerDetails } from "./constants";
 
 export const WhatWeOffer = () => {
@@ -17,7 +18,16 @@ export const WhatWeOffer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {offerDetails.map((offer, index) => (
-            <div key={index} className="bg-white rounded-lg">
+            <motion.div
+              whileHover={{
+                y: -4,
+                scale: 1.015,
+                boxShadow: "0px 8px 24px rgba(0, 0, 0, 0.1)",
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              key={index}
+              className="bg-white rounded-lg"
+            >
               <img
                 src={offer.image}
                 alt={offer.title}
@@ -46,7 +56,7 @@ export const WhatWeOffer = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

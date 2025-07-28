@@ -1,6 +1,7 @@
 import type { IconType } from "react-icons/lib";
 import { Card } from "../ui/card";
 import React from "react";
+import { motion } from "framer-motion";
 
 interface StepProp {
   title: string;
@@ -17,7 +18,11 @@ export const WorkingStepCard = React.memo(
   ({ step, index }: WorkingStepCardProp) => {
     const Icon = step.icon;
     return (
-      <div key={index}>
+      <motion.div
+        whileHover={{ y: -5, scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+        key={index}
+      >
         <Card
           className={`bg-white px-6 !min-h-[300px] !gap-1 ${
             index % 2 === 0 ? "md:mt-0" : "md:mt-4"
@@ -34,7 +39,7 @@ export const WorkingStepCard = React.memo(
           </div>
           <p className="text-muted-foreground text-sm">{step.description}</p>
         </Card>
-      </div>
+      </motion.div>
     );
   }
 );
